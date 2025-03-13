@@ -11,26 +11,28 @@ Program ini bertujuan untuk membantu mahasiswa menghitung nilai akhir suatu mata
 
 3. Program akan meminta pengguna untuk memasukkan nama setiap komponen satu per satu.
    Contoh komponen: Quiz, Assignment, Mid Exam, Final Exam, Seminar Proposal, dll.
-   ![alt text](img/image-2.png)
    (note: Komponen penilaian dikemas dalam structure)
+   ![alt text](img/image-2.png)
 
-4. Setelah nama komponen dimasukkan, program akan meminta pengguna memasukkan persentase bobot dan nilai yang diperoleh dalam format: persentase#nilai
+
+5. Setelah nama komponen dimasukkan, program akan meminta pengguna memasukkan persentase bobot dan nilai yang diperoleh dalam format: 
+   persentase#nilai
    ![alt text](img/image-3.png)
 
-5. Bobot adalah persentase kontribusi komponen terhadap nilai akhir (total bobot harus 100%).
+6. Bobot adalah persentase kontribusi komponen terhadap nilai akhir (total bobot harus 100%).
 
-6. Nilai yang diperoleh adalah skor yang mahasiswa dapatkan untuk komponen tersebut (rentang 0 - 100).
+7. Nilai yang diperoleh adalah skor yang mahasiswa dapatkan untuk komponen tersebut (rentang 0 - 100).
 
-7. Jika total bobot kurang atau lebih dari 100%, program akan menampilkan pesan error dan berhenti.
+8. Jika total bobot kurang atau lebih dari 100%, program akan menampilkan pesan error dan berhenti.
    ![alt text](img/image-4.png)
 
-8. Program akan mencetak semua komponen yang telah dimasukkan dalam format:
+9. Program akan mencetak semua komponen yang telah dimasukkan dalam format:
    <Nama Komponen>;<Persentase Bobot>;<Nilai>
    ![alt text](img/image-5.png)
 
-9. Selanjutnya, Jika nilai akhir ≥ 50.0, maka program mencetak "passed". Jika nilai akhir < 50.0, maka program mencetak "failed".
+10. Selanjutnya, Jika nilai akhir ≥ 50.0, maka program mencetak "passed". Jika nilai akhir < 50.0, maka program mencetak "failed".
    ![alt text](img/image-6.png)
 
-10. Buatlah program dengan mengimplementasikan seluruh materi yang telah di pelajari, mulai dari variabel dan tipe data, brancing dan repetition, array dan memory allocation, operasi string, enum dan struct. Semakin banyak anda mengimplementasikan materi-materi diatas maka akan semakin besar poin yang anda dapat.
+11. Buatlah program dengan mengimplementasikan seluruh materi yang telah di pelajari, mulai dari variabel dan tipe data, brancing dan repetition, array dan memory allocation, operasi string, enum dan struct. Semakin banyak anda mengimplementasikan materi-materi diatas maka akan semakin besar poin yang anda dapat.
 
 SELAMAT BEKERJA.
