@@ -3,11 +3,14 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define MAX_LEN 100
+
 struct Component
 {
     char nama[MAX_LEN];
     char _persentasechar[MAX_LEN];
+    int persen_nilai[1];
     float _nilai_akhir;
 };
 
@@ -39,28 +42,50 @@ int main()
 
     for (int i = 0; i < jumlah_komponen; i++)
     {
-        char delimiter[] = "#";       // Delimiter adalah (#)
-        char ganti_delimiter[] = ";"; // Delimiter adalah (;) //cara ganti nya pakai fungsi apa??? aelah lupa wkw
-        char *token;                  // Variable to store tokens
+        char *token;
 
-        printf("%s\n", component[i]._persentasechar);
-        printf("Tokens:\n");
+        token = strtok(component[i]._persentasechar, "#");
 
-        token = strtok(component[i]._persentasechar, delimiter);
-        while (token != NULL)
-        {
-            printf("%s\n", token);
-            token = strtok(NULL, delimiter);
-        }
+        float bobot = atof(token); // ambil persentase bobot
+        component[i].persen_nilai[0] = (int)bobot;
+
+        token = strtok(NULL, "#");
+
+        float nilai = atof(token); // ambil nilai
+        component[i].persen_nilai[1] = (int)nilai;
+
+        component[i]._nilai_akhir = (bobot / 100.0) * nilai;
     }
 
-    // NOTE :
-    // Jadi Hal yang kurang dipahami disini adalah :
-    // 1. Cara mengganti token ke nilai integer agar nantinya bisa di olah datanya.
-    // 2. Cara membuat nya ke bentuk format "<Nama Komponen>;<Persentase Bobot>;<Nilai>".
-    // 3. Jika nilai akhir ≥ 50.0, maka program mencetak "passed". Jika nilai akhir < 50.0, maka program mencetak "failed". if else biasa di akhir untuk cek lulus tidaknya.
-    // Thq UTS nya (<>~^^~<>) cmiw
-    // btw bang mungkin kode program ini bisa dilanjutkan di review pertemuan praktikum berikutnya
-    // padahal mudah loh <><><><> LOL
+    int persentase_bobot = 0;
+
+    for (int i = 0; i < jumlah_komponen; i++)
+    {
+        persentase_bobot += component[i].persen_nilai[0];
+    }
+
+    if (persentase_bobot != 100)
+    {
+        printf("Total persentase harus 100%%! Saat ini: %d%%\n", persentase_bobot);
+        return 1;
+    }
+
+    for (int i = 0; i < jumlah_komponen; i++)
+    {
+        printf("%s;%d;%d\n", component[i].nama, component[i].persen_nilai[0], component[i].persen_nilai[0]);
+    }
+
+    float jumlah_akhir = 0;
+
+    for (int i = 0; i < jumlah_komponen; i++)
+    {
+        jumlah_akhir += component[i]._nilai_akhir;
+    }
+
+    printf("%.1f\n", jumlah_akhir);
+    if (jumlah_akhir >= 50)
+        printf("passed");
+    else
+        printf("failed");
     return 0;
 }
