@@ -10,7 +10,7 @@ struct Component
 {
     char nama[MAX_LEN];
     char _persentasechar[MAX_LEN];
-    int persen_nilai[1];
+    int persen_nilai[2];
     float _nilai_akhir;
 };
 
@@ -72,7 +72,7 @@ int main()
 
     for (int i = 0; i < jumlah_komponen; i++)
     {
-        printf("%s;%d;%d\n", component[i].nama, component[i].persen_nilai[0], component[i].persen_nilai[0]);
+        printf("%s;%d;%d\n", component[i].nama, component[i].persen_nilai[0], component[i].persen_nilai[1]);
     }
 
     float jumlah_akhir = 0;
